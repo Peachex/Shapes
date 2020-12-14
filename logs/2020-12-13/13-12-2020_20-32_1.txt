@@ -1,0 +1,6 @@
+13-12-2020 20:32:12 parsePoints INFO  parser.PointParser - Invalid point
+13-12-2020 20:32:12 parsePoints INFO  parser.PointParser - Invalid point
+13-12-2020 20:32:12 createInstance INFO  impl.TriangleFactoryImpl - Triangle doesn't exist, it won't be added to the list.
+13-12-2020 20:32:57 parsePoints INFO  parser.PointParser - Invalid point
+13-12-2020 20:32:57 parsePoints INFO  parser.PointParser - Invalid point
+13-12-2020 20:32:57 createInstance INFO  impl.TriangleFactoryImpl - Triangle doesn't exist, it won't be added to the list.

@@ -1,0 +1,4 @@
+13-12-2020 20:44:06 parsePoints INFO  parser.PointParser, message: Invalid point
+13-12-2020 20:44:06 parsePoints INFO  parser.PointParser, message: Invalid point
+13-12-2020 20:44:06 createInstance INFO  impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list.
+13-12-2020 20:44:06 createInstance INFO  impl.TriangleFactoryImpl, message: There is less or more then 3 points.
