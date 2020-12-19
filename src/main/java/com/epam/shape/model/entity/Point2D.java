@@ -1,10 +1,10 @@
 package com.epam.shape.model.entity;
 
-public class CustomPoint {
+public class Point2D {
     private double x;
     private double y;
 
-    public CustomPoint(double x, double y) {
+    public Point2D(double x, double y) {
         this.x = x;
         this.y = y;
     }
@@ -33,7 +33,7 @@ public class CustomPoint {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        CustomPoint point = (CustomPoint) o;
+        Point2D point = (Point2D) o;
         return (Double.compare(point.x, x) == 0 &&
                 Double.compare(point.y, y) == 0);
     }

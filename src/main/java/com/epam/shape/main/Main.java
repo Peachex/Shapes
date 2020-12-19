@@ -1,12 +1,10 @@
 package com.epam.shape.main;
 
 import com.epam.shape.exception.ReaderException;
-import com.epam.shape.model.entity.CustomPoint;
-import com.epam.shape.model.entity.Triangle;
-import com.epam.shape.model.factory.ShapeFactory;
-import com.epam.shape.model.factory.impl.TriangleFactoryImpl;
+import com.epam.shape.model.entity.comparator.TriangleComparator;
 
-import com.epam.shape.parser.PointParser;
+import com.epam.shape.model.initializer.InitRepository;
+import com.epam.shape.model.repository.TriangleRepository;
 import com.epam.shape.reader.TriangleReader;
 
 import java.util.List;
@@ -17,16 +15,10 @@ public class Main {
         TriangleReader reader = new TriangleReader();
         List<String> lines;
         lines = reader.readDataFromFile(path);
+        InitRepository initializer = new InitRepository();
+        initializer.initializeTriangleRepository(lines);
 
-        PointParser parser = new PointParser();
-        List<CustomPoint> points = parser.parsePoints(lines.get(0));
-
-        System.out.println(lines);
-        System.out.println(points);
-
-        ShapeFactory<Triangle> factory = new TriangleFactoryImpl();
-        Triangle triangle = factory.createShape(points).get();
-        System.out.println(triangle);
-
+        System.out.println(
+                TriangleRepository.getRepository().sort(TriangleComparator.FIRST_POINT_X_COORDINATE));
     }
 }

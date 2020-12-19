@@ -1,6 +1,6 @@
 package com.epam.shape.model.service;
 
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.entity.TriangleType;
 
@@ -14,5 +14,5 @@ public interface TriangleService {
 
     EnumSet<TriangleType> findTriangleType(Triangle triangle);
 
-    double findDistanceBetweenPoints(CustomPoint point1, CustomPoint point2);
+    double findDistanceBetweenPoints(Point2D point1, Point2D point2);
 }

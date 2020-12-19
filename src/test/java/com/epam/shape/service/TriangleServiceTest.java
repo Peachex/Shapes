@@ -1,6 +1,6 @@
 package com.epam.shape.service;
 
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.entity.TriangleType;
 import com.epam.shape.model.service.TriangleService;
@@ -19,7 +19,7 @@ public class TriangleServiceTest {
 
     @BeforeMethod
     public void triangleInit() {
-        triangle = new Triangle(new CustomPoint(0, 0), new CustomPoint(0, 10), new CustomPoint(10, 0));
+        triangle = new Triangle(new Point2D(0, 0), new Point2D(0, 10), new Point2D(10, 0));
     }
 
     @Test
@@ -48,7 +48,7 @@ public class TriangleServiceTest {
     @Test
     public void findDistanceBetweenPoints() {
         double expected = Math.sqrt(8);
-        double actual = service.findDistanceBetweenPoints(new CustomPoint(1, 2), new CustomPoint(3, 4));
+        double actual = service.findDistanceBetweenPoints(new Point2D(1, 2), new Point2D(3, 4));
         assertEquals(actual, expected);
     }
 }

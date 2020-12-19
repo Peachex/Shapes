@@ -1,6 +1,6 @@
 package com.epam.shape.model.service.impl;
 
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.entity.TriangleType;
 import com.epam.shape.model.service.TriangleService;
@@ -65,7 +65,7 @@ public class TriangleServiceImpl implements TriangleService {
     }
 
     @Override
-    public double findDistanceBetweenPoints(CustomPoint point1, CustomPoint point2) {
+    public double findDistanceBetweenPoints(Point2D point1, Point2D point2) {
         double result = Math.hypot(point2.getX() - point1.getX(), point2.getY() - point1.getY());
         return result;
     }

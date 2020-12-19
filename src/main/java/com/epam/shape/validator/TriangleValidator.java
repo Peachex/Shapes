@@ -1,6 +1,6 @@
 package com.epam.shape.validator;
 
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.model.service.TriangleService;
 import com.epam.shape.model.service.impl.TriangleServiceImpl;
 
@@ -17,7 +17,7 @@ public class TriangleValidator {
         return result;
     }
 
-    public static boolean isTriangleExist(CustomPoint point1, CustomPoint point2, CustomPoint point3) {
+    public static boolean isTriangleExist(Point2D point1, Point2D point2, Point2D point3) {
         TriangleService service = new TriangleServiceImpl();
         double side1 = service.findDistanceBetweenPoints(point1, point2);
         double side2 = service.findDistanceBetweenPoints(point2, point3);

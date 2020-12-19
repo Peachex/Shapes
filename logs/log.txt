@@ -1,2 +1,4 @@
-19-12-2020 11:17:24 parsePoints INFO  parser.PointParser, message: Invalid point
-19-12-2020 11:17:24 createInstance INFO  impl.TriangleFactoryImpl, message: There are less or more than three points.
+19-12-2020 16:38:46 parsePoints ERROR parser.PointParser, message: Invalid point
+19-12-2020 16:38:46 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points.
+19-12-2020 16:38:46 parsePoints ERROR parser.PointParser, message: Invalid point
+19-12-2020 16:38:46 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points.

@@ -1,6 +1,6 @@
 package com.epam.shape.factory;
 
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.factory.ShapeFactory;
 import com.epam.shape.model.factory.impl.TriangleFactoryImpl;
@@ -16,13 +16,13 @@ import static org.testng.Assert.assertEquals;
 
 public class TriangleFactoryTest {
     private ShapeFactory factory = new TriangleFactoryImpl();
-    private List<CustomPoint> points = new ArrayList<>();
+    private List<Point2D> points = new ArrayList<>();
 
     @BeforeTest
     public void pointsInit() {
-        points.add(new CustomPoint(0, 0));
-        points.add(new CustomPoint(10, 0));
-        points.add(new CustomPoint(0, 10));
+        points.add(new Point2D(0, 0));
+        points.add(new Point2D(10, 0));
+        points.add(new Point2D(0, 10));
     }
 
     @Test

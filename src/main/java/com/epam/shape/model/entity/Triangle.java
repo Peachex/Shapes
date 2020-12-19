@@ -8,12 +8,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Triangle extends Shape2D implements TriangleObservable {
-    private CustomPoint point1;
-    private CustomPoint point2;
-    private CustomPoint point3;
+    private Point2D point1;
+    private Point2D point2;
+    private Point2D point3;
     private List<TriangleObserver> observers;
 
-    public Triangle(CustomPoint point1, CustomPoint point2, CustomPoint point3) {
+    public Triangle(Point2D point1, Point2D point2, Point2D point3) {
         super();
         this.point1 = point1;
         this.point2 = point2;
@@ -21,29 +21,29 @@ public class Triangle extends Shape2D implements TriangleObservable {
         observers = new ArrayList<>();
     }
 
-    public CustomPoint getPoint1() {
+    public Point2D getPoint1() {
         return this.point1;
     }
 
-    public void setPoint1(CustomPoint point1) {
+    public void setPoint1(Point2D point1) {
         this.point1 = point1;
         notifyObservers();
     }
 
-    public CustomPoint getPoint2() {
+    public Point2D getPoint2() {
         return this.point2;
     }
 
-    public void setPoint2(CustomPoint point2) {
+    public void setPoint2(Point2D point2) {
         this.point2 = point2;
         notifyObservers();
     }
 
-    public CustomPoint getPoint3() {
+    public Point2D getPoint3() {
         return this.point3;
     }
 
-    public void setPoint3(CustomPoint point3) {
+    public void setPoint3(Point2D point3) {
         this.point3 = point3;
         notifyObservers();
     }

@@ -1,7 +1,6 @@
 package com.epam.shape.parser;
 
-import com.epam.shape.exception.ReaderException;
-import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Point2D;
 import com.epam.shape.validator.TriangleValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -15,8 +14,8 @@ public class PointParser {
     private final static String SPLIT_POINTS_REGEX = ";";
     private final static int POINTS_AMOUNT = 6;
 
-    public List<CustomPoint> parsePoints(String line) {
-        List<CustomPoint> result = new ArrayList<>();
+    public List<Point2D> parsePoints(String line) {
+        List<Point2D> result = new ArrayList<>();
         if (TriangleValidator.arePointsValid(line)) {
             String[] points = line.split(SPLIT_POINTS_REGEX);
             try {
@@ -24,13 +23,13 @@ public class PointParser {
                 while (count < POINTS_AMOUNT) {
                     double x = Double.parseDouble(points[count++]);
                     double y = Double.parseDouble(points[count++]);
-                    result.add(new CustomPoint(x, y));
+                    result.add(new Point2D(x, y));
                 }
             } catch (NumberFormatException e) {
                 logger.log(Level.ERROR, e);
             }
         } else {
-            logger.log(Level.INFO, "Invalid point");
+            logger.log(Level.ERROR, "Invalid point");
         }
         return result;
     }
