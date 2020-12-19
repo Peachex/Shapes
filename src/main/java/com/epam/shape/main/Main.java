@@ -1,25 +1,32 @@
 package com.epam.shape.main;
 
+import com.epam.shape.exception.ReaderException;
 import com.epam.shape.model.entity.CustomPoint;
+import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.factory.ShapeFactory;
 import com.epam.shape.model.factory.impl.TriangleFactoryImpl;
-import com.epam.shape.model.filler.TriangleRepositoryFiller;
-import com.epam.shape.model.repository.TriangleRepository;
-import com.epam.shape.model.warehouse.TrianglePropertyWarehouse;
+
+import com.epam.shape.parser.PointParser;
+import com.epam.shape.reader.TriangleReader;
+
+import java.util.List;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ReaderException {
         String path = "data\\triangles.txt";
-        TriangleRepositoryFiller filler = new TriangleRepositoryFiller(path);
-        filler.fillTriangleRepository();
-        TriangleRepository repository = TriangleRepository.getRepository();
-        TrianglePropertyWarehouse warehouse = TrianglePropertyWarehouse.getWarehouse();
-        int count = 0;
-        while (count < repository.findSize()) {
-            System.out.println(repository.getTriangle(count));
-            System.out.println(warehouse.getProperty(repository.getTriangle(count++).getShapeId()));
-        }
-        ShapeFactory factory = new TriangleFactoryImpl();
-        factory.createInstance(new CustomPoint(12,3));
+        TriangleReader reader = new TriangleReader();
+        List<String> lines;
+        lines = reader.readDataFromFile(path);
+
+        PointParser parser = new PointParser();
+        List<CustomPoint> points = parser.parsePoints(lines.get(0));
+
+        System.out.println(lines);
+        System.out.println(points);
+
+        ShapeFactory<Triangle> factory = new TriangleFactoryImpl();
+        Triangle triangle = factory.createShape(points).get();
+        System.out.println(triangle);
+
     }
 }

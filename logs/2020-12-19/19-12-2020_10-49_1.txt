@@ -1,0 +1,2 @@
+19-12-2020 10:49:13 readDataFromFile ERROR reader.TriangleReader, message: Path is NULL, default path will be used.
+19-12-2020 10:49:42 readDataFromFile ERROR reader.TriangleReader, message: Path is null, default path will be used.

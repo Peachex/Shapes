@@ -15,15 +15,7 @@ public class TypeSpecification implements Specification {
 
     @Override
     public boolean specify(Triangle triangle) {
-        boolean result = false;
-        TriangleProperty property = TrianglePropertyWarehouse.getWarehouse().getProperty(triangle.getShapeId());
-        int count = 0;
-        while (count < property.findPropertiesAmount()) {
-            if (property.getType(count++).equals(type)) {
-                result = true;
-                break;
-            }
-        }
-        return result;
+        TriangleProperty property = TrianglePropertyWarehouse.getWarehouse().get(triangle.getShapeId());
+        return (property.contains(type));
     }
 }

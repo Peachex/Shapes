@@ -24,7 +24,7 @@ public class TriangleRepository {
         return repository;
     }
 
-    public int findSize() {
+    public int size() {
         return this.triangles.size();
     }
 
@@ -32,7 +32,7 @@ public class TriangleRepository {
         this.triangles.add(triangle);
         TrianglePropertyService service = new TrianglePropertyServiceImpl();
         TriangleProperty property = service.calculateTriangleProperties(triangle);
-        TrianglePropertyWarehouse.getWarehouse().putProperty(triangle.getShapeId(), property);
+        TrianglePropertyWarehouse.getWarehouse().put(triangle.getShapeId(), property);
     }
 
     public void addAll(List<Triangle> triangles) {
@@ -40,28 +40,28 @@ public class TriangleRepository {
         for (Triangle triangle : triangles) {
             TrianglePropertyService service = new TrianglePropertyServiceImpl();
             TriangleProperty property = service.calculateTriangleProperties(triangle);
-            TrianglePropertyWarehouse.getWarehouse().putProperty(triangle.getShapeId(), property);
+            TrianglePropertyWarehouse.getWarehouse().put(triangle.getShapeId(), property);
         }
     }
 
-    public Triangle getTriangle(int index) {
+    public Triangle get(int index) {
         return this.triangles.get(index);
     }
 
     public void remove(Triangle triangle) {
-        TrianglePropertyWarehouse.getWarehouse().removeProperty(triangle.getShapeId());
+        TrianglePropertyWarehouse.getWarehouse().remove(triangle.getShapeId());
         this.triangles.remove(triangle);
     }
 
     public void removeAll(List<Triangle> triangles) {
         for (Triangle triangle : triangles) {
-            TrianglePropertyWarehouse.getWarehouse().removeProperty(triangle.getShapeId());
+            TrianglePropertyWarehouse.getWarehouse().remove(triangle.getShapeId());
         }
         this.triangles.removeAll(triangles);
     }
 
     public List<Triangle> query(Specification specification) {
-        List<Triangle> result = triangles.stream().filter(triangle -> specification.specify(triangle)).collect(Collectors.toList());
+        List<Triangle> result = triangles.stream().filter(specification::specify).collect(Collectors.toList());
         return result;
     }
 

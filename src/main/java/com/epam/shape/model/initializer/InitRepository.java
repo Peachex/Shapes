@@ -1,5 +1,7 @@
+/*
 package com.epam.shape.model.filler;
 
+import com.epam.shape.exception.ReaderException;
 import com.epam.shape.model.entity.CustomPoint;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.entity.TriangleProperty;
@@ -22,7 +24,7 @@ public class TriangleRepositoryFiller {
         this.path = path;
     }
 
-    public void fillTriangleRepository() {
+    public void fillTriangleRepository() throws ReaderException {
         PointParser parser = new PointParser();
         ShapeFactory<Triangle> factory = new TriangleFactoryImpl();
         List<CustomPoint> points = parser.parsePoints(path);
@@ -52,3 +54,4 @@ public class TriangleRepositoryFiller {
         this.path = path;
     }
 }
+*/

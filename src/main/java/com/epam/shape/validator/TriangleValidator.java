@@ -8,11 +8,11 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TriangleValidator {
-    private final static String pointsFormat = "-?\\d{1,5}(\\.\\d{0,5})?";
+    private final static String pointsFormat = "(-?\\d{1,5}(\\.\\d{0,5})?;?){6}";
 
-    public static boolean isPointValid(String point) {
+    public static boolean arePointsValid(String points) {
         Pattern pointRegex = Pattern.compile(pointsFormat);
-        Matcher matcher = pointRegex.matcher(point);
+        Matcher matcher = pointRegex.matcher(points);
         boolean result = matcher.matches();
         return result;
     }

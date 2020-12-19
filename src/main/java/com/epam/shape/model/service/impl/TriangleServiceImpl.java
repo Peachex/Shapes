@@ -6,6 +6,7 @@ import com.epam.shape.model.entity.TriangleType;
 import com.epam.shape.model.service.TriangleService;
 
 import java.util.ArrayList;
+import java.util.EnumSet;
 import java.util.List;
 
 public class TriangleServiceImpl implements TriangleService {
@@ -33,14 +34,14 @@ public class TriangleServiceImpl implements TriangleService {
     }
 
     @Override
-    public List<TriangleType> findTriangleType(Triangle triangle) {
+    public EnumSet<TriangleType> findTriangleType(Triangle triangle) {
         List<Double> sides = findSides(triangle);
         double sideWithMinLength1 = Double.min(sides.get(SIDE1_INDEX), sides.get(SIDE2_INDEX));
         double sideWithMinLength2 = Double.max(sides.get(SIDE1_INDEX), sides.get(SIDE2_INDEX));
         sideWithMinLength2 = Double.min(sideWithMinLength2, sides.get(SIDE3_INDEX));
         double sideWithMaxLength = findSideWithMaxLength(sides);
 
-        List<TriangleType> result = new ArrayList<>();
+        EnumSet<TriangleType> result = EnumSet.noneOf(TriangleType.class);
 
         if (Math.hypot(sideWithMinLength1, sideWithMinLength2) == sideWithMaxLength) {
             result.add(TriangleType.RECTANGULAR);
@@ -69,7 +70,7 @@ public class TriangleServiceImpl implements TriangleService {
         return result;
     }
 
-   private double findSideWithMaxLength(List<Double> sides) {
+    private double findSideWithMaxLength(List<Double> sides) {
         double result = Double.max(sides.get(SIDE1_INDEX), sides.get(SIDE2_INDEX));
         result = Double.max(result, sides.get(SIDE3_INDEX));
         return result;

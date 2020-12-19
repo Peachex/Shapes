@@ -1,13 +1,13 @@
 package com.epam.shape.model.entity;
 
-import java.util.List;
+import java.util.EnumSet;
 
 public class TriangleProperty {
     private double square;
     private double perimeter;
-    private List<TriangleType> types;
+    private EnumSet<TriangleType> types;
 
-    public TriangleProperty(double square, double perimeter, List<TriangleType> triangleTypes) {
+    public TriangleProperty(double square, double perimeter, EnumSet<TriangleType> triangleTypes) {
         this.square = square;
         this.perimeter = perimeter;
         this.types = triangleTypes;
@@ -29,39 +29,16 @@ public class TriangleProperty {
         this.perimeter = perimeter;
     }
 
-    public TriangleType getType(int index) {
-        return types.get(index);
+    public boolean contains(TriangleType triangleType) {
+        return types.contains(triangleType);
     }
 
     public void addType(TriangleType triangleType) {
         types.add(triangleType);
     }
 
-    public void setType(int index, TriangleType triangleType) {
-        types.set(index, triangleType);
-    }
-
-    public int findPropertiesAmount() {
-        return types.size();
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return false;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        TriangleProperty that = (TriangleProperty) o;
-        return this.square == that.square && this.perimeter == that.perimeter && this.types.equals(that.types);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = 31 + Double.hashCode(this.square);
-        result = 31 * result + Double.hashCode(this.perimeter) + this.types.hashCode();
-        return result;
+    public void removeType(TriangleType triangleType) {
+        types.remove(triangleType);
     }
 
     @Override

@@ -14,7 +14,7 @@ public class PerimeterMaxValueSpecification implements Specification {
     @Override
     public boolean specify(Triangle triangle) {
         boolean result = false;
-        double perimeter = TrianglePropertyWarehouse.getWarehouse().getProperty(triangle.getShapeId()).getPerimeter();
+        double perimeter = TrianglePropertyWarehouse.getWarehouse().get(triangle.getShapeId()).getPerimeter();
         return (perimeter > maxValue);
     }
 }

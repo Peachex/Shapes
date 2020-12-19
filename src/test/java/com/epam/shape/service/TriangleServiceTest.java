@@ -6,8 +6,7 @@ import com.epam.shape.model.entity.TriangleType;
 import com.epam.shape.model.service.TriangleService;
 import com.epam.shape.model.service.impl.TriangleServiceImpl;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.EnumSet;
 
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -39,10 +38,10 @@ public class TriangleServiceTest {
 
     @Test
     public void findTriangleType() {
-        List<TriangleType> expected = new ArrayList<>();
+        EnumSet<TriangleType> expected = EnumSet.noneOf(TriangleType.class);
         expected.add(TriangleType.RECTANGULAR);
         expected.add(TriangleType.ISOSCELES);
-        List<TriangleType> actual = service.findTriangleType(triangle);
+        EnumSet<TriangleType> actual = service.findTriangleType(triangle);
         assertEquals(actual, expected);
     }
 

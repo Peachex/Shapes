@@ -4,7 +4,7 @@ import com.epam.shape.model.entity.CustomPoint;
 import com.epam.shape.model.entity.Triangle;
 import com.epam.shape.model.entity.TriangleType;
 
-import java.util.List;
+import java.util.EnumSet;
 
 public interface TriangleService {
 
@@ -12,7 +12,7 @@ public interface TriangleService {
 
     double findPerimeter(Triangle triangle);
 
-    List<TriangleType> findTriangleType(Triangle triangle);
+    EnumSet<TriangleType> findTriangleType(Triangle triangle);
 
     double findDistanceBetweenPoints(CustomPoint point1, CustomPoint point2);
 }

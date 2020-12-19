@@ -2,7 +2,6 @@ package com.epam.shape.model.entity;
 
 import com.epam.shape.util.ShapeIdGenerator;
 
-
 public abstract class Shape2D {
     private final long shapeId;
 
@@ -12,16 +11,6 @@ public abstract class Shape2D {
 
     public long getShapeId() {
         return this.shapeId;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        return this == o || o == null || getClass() != o.getClass();
-    }
-
-    @Override
-    public int hashCode() {
-        return 31;
     }
 
     @Override

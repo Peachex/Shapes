@@ -1,5 +1,5 @@
 package com.epam.shape.model.observer;
 
-public interface CustomObserver {
+public interface TriangleObserver {
     void parameterChanged(TriangleEvent event);
 }

@@ -1,0 +1,1 @@
+19-12-2020 10:20:40 readDataFromFile ERROR reader.TriangleReader, message: Wrong user file, default file will be used.

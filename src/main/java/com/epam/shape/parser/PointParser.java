@@ -1,12 +1,11 @@
 package com.epam.shape.parser;
 
+import com.epam.shape.exception.ReaderException;
 import com.epam.shape.model.entity.CustomPoint;
-import com.epam.shape.model.reader.TriangleReader;
+import com.epam.shape.validator.TriangleValidator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
-import static com.epam.shape.validator.TriangleValidator.isPointValid;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,36 +13,24 @@ import java.util.List;
 public class PointParser {
     private final static Logger logger = LogManager.getLogger();
     private final static String SPLIT_POINTS_REGEX = ";";
-    private final static int VALUES_AMOUNT = 6;
+    private final static int POINTS_AMOUNT = 6;
 
-    public List<CustomPoint> parsePoints(String path) {
-        TriangleReader reader = new TriangleReader();
-        List<String> lines = reader.readDataFromFile(path);
+    public List<CustomPoint> parsePoints(String line) {
         List<CustomPoint> result = new ArrayList<>();
-        for (String line : lines) {
+        if (TriangleValidator.arePointsValid(line)) {
             String[] points = line.split(SPLIT_POINTS_REGEX);
-            if (points.length == VALUES_AMOUNT) {
-                boolean validCondition = true;
-                for (String str : points) {
-                    if (!isPointValid(str)) {
-                        validCondition = false;
-                    }
+            try {
+                int count = 0;
+                while (count < POINTS_AMOUNT) {
+                    double x = Double.parseDouble(points[count++]);
+                    double y = Double.parseDouble(points[count++]);
+                    result.add(new CustomPoint(x, y));
                 }
-                if (validCondition) {
-                    try {
-                        int count = 0;
-                        while (count < points.length) {
-                            double x = Double.parseDouble(points[count++]);
-                            double y = Double.parseDouble(points[count++]);
-                            result.add(new CustomPoint(x, y));
-                        }
-                    } catch (NumberFormatException e) {
-                        logger.log(Level.ERROR, e);
-                    }
-                }
-            } else {
-                logger.log(Level.INFO, "Invalid point");
+            } catch (NumberFormatException e) {
+                logger.log(Level.ERROR, e);
             }
+        } else {
+            logger.log(Level.INFO, "Invalid point");
         }
         return result;
     }

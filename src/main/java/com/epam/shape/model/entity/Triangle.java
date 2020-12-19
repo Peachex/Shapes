@@ -1,24 +1,24 @@
 package com.epam.shape.model.entity;
 
-import com.epam.shape.model.observer.CustomObservable;
-import com.epam.shape.model.observer.CustomObserver;
+import com.epam.shape.model.observer.TriangleObservable;
+import com.epam.shape.model.observer.TriangleObserver;
 import com.epam.shape.model.observer.TriangleEvent;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
-public class Triangle extends Shape2D implements CustomObservable {
+public class Triangle extends Shape2D implements TriangleObservable {
     private CustomPoint point1;
     private CustomPoint point2;
     private CustomPoint point3;
-    private Set<CustomObserver> observers;
+    private List<TriangleObserver> observers;
 
     public Triangle(CustomPoint point1, CustomPoint point2, CustomPoint point3) {
         super();
         this.point1 = point1;
         this.point2 = point2;
         this.point3 = point3;
-        observers = new HashSet<>();
+        observers = new ArrayList<>();
     }
 
     public CustomPoint getPoint1() {
@@ -49,19 +49,19 @@ public class Triangle extends Shape2D implements CustomObservable {
     }
 
     @Override
-    public void attach(CustomObserver observer) {
+    public void attach(TriangleObserver observer) {
         observers.add(observer);
     }
 
     @Override
-    public void detach(CustomObserver observer) {
+    public void detach(TriangleObserver observer) {
         observers.remove(observer);
     }
 
     @Override
     public void notifyObservers() {
         TriangleEvent event = new TriangleEvent(this);
-        for (CustomObserver observer : observers) {
+        for (TriangleObserver observer : observers) {
             observer.parameterChanged(event);
         }
     }

@@ -18,38 +18,20 @@ public class TrianglePropertyWarehouse {
         return warehouse;
     }
 
-    public int findSize() {
+    public int size() {
         return trianglesProperty.size();
     }
 
-    public TriangleProperty getProperty(Long id) {
+    public TriangleProperty get(Long id) {
         return trianglesProperty.get(id);
     }
 
-    public void putProperty(Long id, TriangleProperty property) {
+    public void put(Long id, TriangleProperty property) {
         trianglesProperty.put(id, property);
     }
 
-    public void removeProperty(Long id) {
+    public void remove(Long id) {
         trianglesProperty.remove(id);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        TrianglePropertyWarehouse warehouse = (TrianglePropertyWarehouse) o;
-        return trianglesProperty.equals(warehouse.trianglesProperty);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = 31 + trianglesProperty.hashCode();
-        return result;
     }
 
     @Override

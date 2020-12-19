@@ -15,7 +15,7 @@ public class SquareIntervalSpecification implements Specification {
 
     @Override
     public boolean specify(Triangle triangle) {
-        double square = TrianglePropertyWarehouse.getWarehouse().getProperty(triangle.getShapeId()).getSquare();
+        double square = TrianglePropertyWarehouse.getWarehouse().get(triangle.getShapeId()).getSquare();
         return (square >= minValue && square <= maxValue);
     }
 }
