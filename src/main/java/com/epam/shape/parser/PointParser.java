@@ -29,7 +29,7 @@ public class PointParser {
                 logger.log(Level.ERROR, e);
             }
         } else {
-            logger.log(Level.ERROR, "Invalid point");
+            logger.log(Level.ERROR, "Invalid point [" + line + "].");
         }
         return result;
     }

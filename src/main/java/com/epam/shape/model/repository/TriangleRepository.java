@@ -70,4 +70,8 @@ public class TriangleRepository {
         sortedTriangles.sort(comparator);
         return sortedTriangles;
     }
+
+    public void clearRepository() {
+        this.triangles = new ArrayList<>();
+    }
 }

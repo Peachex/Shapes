@@ -8,10 +8,10 @@ import java.util.Map;
 public class TrianglePropertyWarehouse {
     private final static TrianglePropertyWarehouse warehouse = new TrianglePropertyWarehouse();
 
-    private Map<Long, TriangleProperty> trianglesProperty;
+    private Map<Long, TriangleProperty> trianglesProperties;
 
     private TrianglePropertyWarehouse() {
-        trianglesProperty = new HashMap<>();
+        trianglesProperties = new HashMap<>();
     }
 
     public static TrianglePropertyWarehouse getWarehouse() {
@@ -19,25 +19,30 @@ public class TrianglePropertyWarehouse {
     }
 
     public int size() {
-        return trianglesProperty.size();
+        return trianglesProperties.size();
     }
 
     public TriangleProperty get(Long id) {
-        return trianglesProperty.get(id);
+        return trianglesProperties.get(id);
     }
 
     public void put(Long id, TriangleProperty property) {
-        trianglesProperty.put(id, property);
+        trianglesProperties.put(id, property);
     }
 
     public void remove(Long id) {
-        trianglesProperty.remove(id);
+        trianglesProperties.remove(id);
+    }
+
+
+    public void clearWarehouse() {
+        this.trianglesProperties = new HashMap<>();
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Warehouse{");
-        sb.append("trianglesProperty=").append(trianglesProperty);
+        sb.append("trianglesProperty=").append(trianglesProperties);
         sb.append('}');
         return sb.toString();
     }

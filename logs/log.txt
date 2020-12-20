@@ -1,4 +1,45 @@
-19-12-2020 16:38:46 parsePoints ERROR parser.PointParser, message: Invalid point
-19-12-2020 16:38:46 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points.
-19-12-2020 16:38:46 parsePoints ERROR parser.PointParser, message: Invalid point
-19-12-2020 16:38:46 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points.
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1da;2;3;4;5;6].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 parsePoints ERROR parser.PointParser, message: Invalid point [1;2;3;4;5].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: There are less or more than three points [].
+20-12-2020 18:44:26 createShape ERROR impl.TriangleFactoryImpl, message: Triangle doesn't exist, it will be not added to the list [x = 25.0, y = 25.0, x = 15.0, y = 15.0, x = 10.0, y = 10.0].
